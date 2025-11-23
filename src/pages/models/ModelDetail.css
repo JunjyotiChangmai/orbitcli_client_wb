@@ -130,6 +130,27 @@
   color: #aaaaaa;
   line-height: 1.6;
   max-width: 800px;
+  margin-bottom: 32px;
+}
+
+.model-overview {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.overview-title {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.overview-content {
+  font-size: 1.1em;
+  color: #cccccc;
+  line-height: 1.8;
 }
 
 .model-detail-sections {

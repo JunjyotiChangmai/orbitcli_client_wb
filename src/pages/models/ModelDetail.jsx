@@ -158,14 +158,14 @@ const ModelDetail = () => {
             <div className="model-badge-large">{model.badge}</div>
             <h1 className="model-detail-title">{model.fullName}</h1>
             <p className="model-detail-subtitle">{model.description}</p>
+            <div className="model-overview">
+              <h2 className="overview-title">Overview</h2>
+              <p className="overview-content">{model.longDescription}</p>
+            </div>
           </div>
         </div>
 
         <div className="model-detail-sections">
-          <section className="model-section">
-            <h2 className="section-title">Overview</h2>
-            <p className="section-content">{model.longDescription}</p>
-          </section>
 
           <section className={`model-section ${modelId}`}>
             <h2 className="section-title">Key Features</h2>

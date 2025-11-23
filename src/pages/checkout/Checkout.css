@@ -536,18 +536,30 @@
 }
 
 .confirmation-section {
+  background: rgba(26, 26, 26, 0.91);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1.2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.5);
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-bottom: 24px;
 }
 
 .confirmation-item {
-  background: rgba(26, 26, 26, 0.6);
-  border-radius: 12px;
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 24px;
+}
+
+.confirmation-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .confirmation-item h3 {
