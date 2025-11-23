@@ -12,6 +12,7 @@ const ModelDetail = () => {
       fullName: 'GPT-4 by OpenAI',
       description: 'GPT-4 is OpenAI\'s most advanced language model, featuring exceptional reasoning capabilities, multimodal support, and state-of-the-art performance across a wide range of tasks.',
       longDescription: 'GPT-4 represents a significant leap forward in AI capabilities. It can understand and generate human-like text, analyze images, write code, solve complex problems, and assist with creative tasks. With its large context window and improved reasoning, GPT-4 is ideal for applications requiring deep understanding and nuanced responses.',
+      price: 16500,
       features: [
         'Advanced reasoning and problem-solving capabilities',
         'Multimodal support (text and image understanding)',
@@ -45,6 +46,7 @@ const ModelDetail = () => {
       fullName: 'Google Gemini',
       description: 'Google Gemini is a cutting-edge AI model designed for complex reasoning, code generation, and creative tasks. It excels at understanding context and providing accurate, helpful responses.',
       longDescription: 'Gemini represents Google\'s latest advancement in AI technology. Built with multimodal capabilities, it can process and understand text, images, audio, and video. Gemini is optimized for tasks requiring deep reasoning, code generation, and creative problem-solving. Its architecture enables fast response times while maintaining high quality outputs.',
+      price: 14800,
       features: [
         'Advanced code generation and debugging',
         'Multimodal understanding (text, images, audio, video)',
@@ -77,6 +79,7 @@ const ModelDetail = () => {
       fullName: 'Claude AI by Anthropic',
       description: 'Claude is Anthropic\'s AI assistant focused on being helpful, harmless, and honest. It features extended context understanding and excels at detailed analysis and conversation.',
       longDescription: 'Claude is designed with a focus on safety, helpfulness, and transparency. It can handle extended conversations with context retention, provide detailed analysis of complex topics, and assist with a wide range of tasks while maintaining ethical principles. Claude\'s architecture prioritizes accuracy and thoughtful responses.',
+      price: 15700,
       features: [
         'Extended context understanding (up to 200K tokens)',
         'Ethical AI principles and safety focus',
@@ -122,7 +125,17 @@ const ModelDetail = () => {
   }
 
   const handleBilling = () => {
-    navigate('/billing')
+    navigate('/billing', {
+      state: {
+        model: {
+          name: model.name,
+          fullName: model.fullName,
+          description: model.description,
+          price: model.price,
+          id: modelId
+        }
+      }
+    })
   }
 
   return (

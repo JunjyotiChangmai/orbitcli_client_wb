@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import './Billing.css'
 
 const Billing = () => {
   const navigate = useNavigate()
+  const location = useLocation()
   const [billingPeriod, setBillingPeriod] = useState('monthly') // 'monthly' or 'yearly'
+  
+  // Get model info from location state if coming from ModelDetail
+  const modelInfo = location.state?.model || null
 
   const plans = [
     {
@@ -70,6 +74,34 @@ const Billing = () => {
     return billingPeriod === 'monthly' ? 'month' : 'year'
   }
 
+  const handleGetStarted = (plan) => {
+    // Always use plan price from billing section
+    let finalPrice = 0
+    const price = getPrice(plan)
+    
+    if (price && price !== 'Custom' && price !== '₹0') {
+      const priceValue = price.replace('₹', '').replace(/,/g, '')
+      const numericValue = parseFloat(priceValue)
+      if (!isNaN(numericValue) && numericValue >= 0) {
+        finalPrice = numericValue
+      }
+    }
+    
+    navigate('/checkout', {
+      state: {
+        plan: {
+          name: plan.name,
+          price: finalPrice,
+          priceDisplay: price, // Keep the original display format
+          period: getPeriod(plan),
+          id: plan.id,
+          billingPeriod: billingPeriod
+        },
+        model: modelInfo
+      }
+    })
+  }
+
   return (
     <div className="billing-container">
       <div className="billing-header">
@@ -119,7 +151,10 @@ const Billing = () => {
                 </li>
               ))}
             </ul>
-            <button className="plan-button">
+            <button 
+              className="plan-button"
+              onClick={() => plan.id !== 'enterprise' && handleGetStarted(plan)}
+            >
               {plan.id === 'enterprise' ? 'Contact Sales' : 'Get Started'}
             </button>
           </div>

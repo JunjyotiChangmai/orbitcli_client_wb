@@ -7,6 +7,7 @@ import Dashboard from './pages/dashboard/Dashboard'
 import Models from './pages/models/Models'
 import ModelDetail from './pages/models/ModelDetail'
 import Billing from './pages/billing/Billing'
+import Checkout from './pages/checkout/Checkout'
 import Navbar from './components/Navbar'
 import { AuthProvider, useAuth } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
@@ -74,6 +75,14 @@ function AppRoutes() {
           element={
             <ProtectedRoute>
               <Billing/>
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path='/checkout' 
+          element={
+            <ProtectedRoute>
+              <Checkout/>
             </ProtectedRoute>
           }
         />
