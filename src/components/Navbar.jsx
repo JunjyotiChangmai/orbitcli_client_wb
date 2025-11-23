@@ -53,6 +53,12 @@ const Navbar = () => {
               >
                 Dashboard
               </Link>
+              <Link 
+                to="/models" 
+                className={`navbar-link ${location.pathname === '/models' ? 'active' : ''}`}
+              >
+                Models
+              </Link>
               <div className="navbar-user">
                 <div className="user-avatar">
                   <span className="avatar-text">{getInitials(user?.name)}</span>

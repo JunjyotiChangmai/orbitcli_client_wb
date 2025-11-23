@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+.models-container {
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 100px 20px 40px 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.models-header {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.models-header h1 {
+  font-size: clamp(2.5em, 5vw, 4em);
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+
+.models-header p {
+  font-size: 1.2em;
+  color: #aaaaaa;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.model-card {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
+  border-radius: 24px;
+  padding: 40px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.model-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
+}
+
+.model-card:hover::before {
+  transform: scaleX(1);
+}
+
+.model-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(26, 26, 26, 0.98) 100%);
+}
+
+.model-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.model-card:hover .model-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.model-icon svg {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.2));
+}
+
+/* GPT Specific Styles */
+.model-card.gpt .model-icon {
+  background: linear-gradient(135deg, #10a37f 0%, #0d8f6e 100%);
+  box-shadow: 0 8px 24px rgba(16, 163, 127, 0.4);
+}
+
+.model-card.gpt:hover .model-icon {
+  box-shadow: 0 12px 32px rgba(16, 163, 127, 0.6);
+}
+
+/* Gemini Specific Styles */
+.model-card.gemini .model-icon {
+  background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%);
+  box-shadow: 0 8px 24px rgba(66, 133, 244, 0.4);
+}
+
+.model-card.gemini:hover .model-icon {
+  box-shadow: 0 12px 32px rgba(66, 133, 244, 0.6);
+}
+
+/* Claude Specific Styles */
+.model-card.claude .model-icon {
+  background: linear-gradient(135deg, #d97757 0%, #c46242 100%);
+  box-shadow: 0 8px 24px rgba(217, 119, 87, 0.4);
+}
+
+.model-card.claude:hover .model-icon {
+  box-shadow: 0 12px 32px rgba(217, 119, 87, 0.6);
+}
+
+.model-title {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.model-description {
+  font-size: 1em;
+  color: #aaaaaa;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.model-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.model-features li {
+  font-size: 0.9em;
+  color: #cccccc;
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.model-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.model-card.gpt .model-features li::before {
+  color: #10a37f;
+}
+
+.model-card.gemini .model-features li::before {
+  color: #4285f4;
+}
+
+.model-card.claude .model-features li::before {
+  color: #d97757;
+}
+
+.model-button {
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1em;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.model-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.model-card.gpt .model-button:hover {
+  background: rgba(16, 163, 127, 0.2);
+  border-color: #10a37f;
+}
+
+.model-card.gemini .model-button:hover {
+  background: rgba(66, 133, 244, 0.2);
+  border-color: #4285f4;
+}
+
+.model-card.claude .model-button:hover {
+  background: rgba(217, 119, 87, 0.2);
+  border-color: #d97757;
+}
+
+.model-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.model-card.gpt .model-badge {
+  background: rgba(16, 163, 127, 0.2);
+  color: #10a37f;
+  border: 1px solid rgba(16, 163, 127, 0.3);
+}
+
+.model-card.gemini .model-badge {
+  background: rgba(66, 133, 244, 0.2);
+  color: #4285f4;
+  border: 1px solid rgba(66, 133, 244, 0.3);
+}
+
+.model-card.claude .model-badge {
+  background: rgba(217, 119, 87, 0.2);
+  color: #d97757;
+  border: 1px solid rgba(217, 119, 87, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .models-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .model-card {
+    padding: 32px 24px;
+  }
+
+  .models-header h1 {
+    font-size: 2em;
+  }
+
+  .models-header p {
+    font-size: 1em;
+  }
+}
+

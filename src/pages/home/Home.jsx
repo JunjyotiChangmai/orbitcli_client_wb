@@ -1,12 +1,10 @@
 import React from 'react';
 import TerminalBackground from '../../components/TerminalBackground';
-import Navbar from '../../components/Navbar';
 import './Home.css';
 
 const Home = () => {
   return (
     <div className="home-container">
-      <Navbar />
       <section className="hero">
         <TerminalBackground />
         <div className="hero-background">
