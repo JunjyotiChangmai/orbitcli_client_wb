@@ -17,7 +17,9 @@ function AppRoutes() {
         justifyContent: 'center', 
         alignItems: 'center', 
         height: '100vh',
-        fontSize: '18px'
+        fontSize: '18px',
+        backgroundColor: '#000000',
+        color: '#ffffff'
       }}>
         Loading...
       </div>

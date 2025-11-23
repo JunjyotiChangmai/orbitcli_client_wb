@@ -9,10 +9,11 @@
 
 .home-container {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #1a1a1a;
+  color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
   padding-top: 72px;
+  background-color: #000000;
 }
 
 /* Hero Section */
@@ -26,11 +27,11 @@
   position: relative;
   overflow: hidden;
   background: 
-    radial-gradient(ellipse at top left, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at top right, rgba(168, 85, 247, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom left, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-    linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #2563eb 50%, #3b82f6 75%, #60a5fa 100%);
+    radial-gradient(ellipse at top left, rgba(30, 30, 30, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at top right, rgba(20, 20, 20, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(15, 15, 15, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(25, 25, 25, 0.5) 0%, transparent 50%),
+    linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #1a1a1a 50%, #0f0f0f 75%, #000000 100%);
 }
 
 .hero-background {
@@ -231,7 +232,7 @@
 .features {
   padding: 120px 20px;
   text-align: center;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
   position: relative;
 }
 
@@ -242,9 +243,9 @@
 .features h2 {
   font-size: clamp(2em, 4vw, 3em);
   margin-bottom: 20px;
-  color: #1a1a1a;
+  color: #ffffff;
   font-weight: 800;
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #999999 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -252,7 +253,7 @@
 
 .section-subtitle {
   font-size: 1.2em;
-  color: #64748b;
+  color: #aaaaaa;
   max-width: 600px;
   margin: 0 auto;
   font-weight: 400;
@@ -267,12 +268,12 @@
 }
 
 .feature-item {
-  background: white;
+  background: #1a1a1a;
   padding: 40px 30px;
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -321,24 +322,24 @@
 .feature-item h3 {
   font-size: 1.5em;
   margin-bottom: 15px;
-  color: #1a1a1a;
+  color: #ffffff;
   font-weight: 700;
 }
 
 .feature-item p {
   font-size: 1em;
-  color: #64748b;
+  color: #cccccc;
   line-height: 1.7;
 }
 
 /* Call to Action Section */
 .cta {
   background: 
-    radial-gradient(ellipse at top left, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at top right, rgba(37, 99, 235, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom left, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(96, 165, 250, 0.3) 0%, transparent 50%),
-    linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #2563eb 50%, #3b82f6 75%, #60a5fa 100%);
+    radial-gradient(ellipse at top left, rgba(30, 30, 30, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at top right, rgba(20, 20, 20, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(15, 15, 15, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(25, 25, 25, 0.5) 0%, transparent 50%),
+    linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #1a1a1a 50%, #0f0f0f 75%, #000000 100%);
   color: white;
   text-align: center;
   padding: 120px 20px;
@@ -417,7 +418,7 @@
 /* --- NEW FEATURES MOSAIC SECTION --- */
 
 .new-features-section {
-  background: linear-gradient(180deg, #f3f8fc 0%, #f7fafe 100%);
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
   padding: 120px 20px 100px 20px;
   position: relative;
   z-index: 1;
@@ -427,8 +428,8 @@
   font-size: clamp(2.2em, 4vw, 3.4em);
   font-weight: 900;
   letter-spacing: -1px;
-  color: #1a2265;
-  background: linear-gradient(92deg, #2563eb 34%, #6ee7b7 74%, #4f46e5 94%);
+  color: #ffffff;
+  background: linear-gradient(92deg, #ffffff 34%, #cccccc 74%, #999999 94%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -436,7 +437,7 @@
 
 .new-section-header .section-subtitle {
   font-size: 1.2em;
-  color: #76769c;
+  color: #aaaaaa;
   margin-bottom: 56px;
   font-weight: 400;
 }
@@ -455,15 +456,15 @@
   grid-row: 1/4;
   grid-column: 2/5;
   z-index: 2;
-  background: rgba(255,255,255,0.90);
-  box-shadow: 0 12px 44px 12px rgba(52,99,215,0.10);
+  background: rgba(26,26,26,0.90);
+  box-shadow: 0 12px 44px 12px rgba(0,0,0,0.50);
   border-radius: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 58px 40px;
   backdrop-filter: blur(7px);
-  border: 1.5px solid #e0e7ef;
+  border: 1.5px solid rgba(255,255,255,0.1);
   transition: transform 0.3s cubic-bezier(.36,1.09,.83,1), box-shadow 0.3s;
   position: relative;
 }
@@ -473,7 +474,7 @@
 }
 .central-title {
   font-size: 2em;
-  background: linear-gradient(92deg,#2563eb 20%,#10b981 90%);
+  background: linear-gradient(92deg,#ffffff 20%,#cccccc 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -492,23 +493,23 @@
 }
 
 div.feature-card.small-card {
-  background: rgba(255,255,255,0.75);
+  background: rgba(26,26,26,0.75);
   border-radius: 22px;
-  box-shadow: 0 4px 30px 0 rgba(37,99,235,.08);
+  box-shadow: 0 4px 30px 0 rgba(0,0,0,.50);
   padding: 33px 18px 29px 18px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  border: 1.2px solid #e2e8f0;
+  border: 1.2px solid rgba(255,255,255,0.1);
   transition: transform .26s, box-shadow .26s;
   z-index: 1;
 }
 .feature-card.small-card:hover {
   transform: translateY(-10px) scale(1.04) rotate(-2.5deg);
-  box-shadow: 0 18px 40px 0 rgba(52,99,215,0.11);
-  background: rgba(245,245,255,0.97);
+  box-shadow: 0 18px 40px 0 rgba(0,0,0,0.60);
+  background: rgba(30,30,30,0.97);
 }
 
 .top-left {
@@ -532,12 +533,12 @@ div.feature-card.small-card {
   font-size: 1.24em;
   font-weight: 700;
   margin: 24px 0 10px 0;
-  color: #2e357a;
+  color: #ffffff;
   letter-spacing: -0.3px;
 }
 .feature-card p {
   font-size: 1em;
-  color: #636785;
+  color: #cccccc;
   line-height: 1.6;
   margin-bottom: 0;
   margin-top: 7px;
@@ -594,7 +595,7 @@ div.feature-card.small-card {
 /* --- PERFECTION-ALIGNED 2x2 FEATURE GRID STYLES --- */
 
 .aligned-features-section {
-  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
   padding: 110px 20px 100px 20px;
   position: relative;
 }
@@ -602,8 +603,8 @@ div.feature-card.small-card {
 .aligned-section-header h2 {
   font-size: clamp(2.2em, 4vw, 3.2em);
   font-weight: 900;
-  color: #1e293b;
-  background: linear-gradient(90deg, #2563eb 40%, #10b981 100%);
+  color: #ffffff;
+  background: linear-gradient(90deg, #ffffff 40%, #cccccc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -612,7 +613,7 @@ div.feature-card.small-card {
 
 .aligned-section-header .section-subtitle {
   font-size: 1.13em;
-  color: #64748b;
+  color: #aaaaaa;
   margin-bottom: 64px;
   font-weight: 400;
   text-align: center;
@@ -629,9 +630,9 @@ div.feature-card.small-card {
 }
 
 .aligned-feature-card {
-  background: rgba(255, 255, 255, 0.91);
+  background: rgba(26, 26, 26, 0.91);
   border-radius: 22px;
-  box-shadow: 0 6px 30px 0 rgba(37,99,235,.11);
+  box-shadow: 0 6px 30px 0 rgba(0,0,0,.50);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -640,14 +641,14 @@ div.feature-card.small-card {
   min-height: 270px;
   min-width: 0;
   padding: 36px 26px 36px 26px;
-  border: 1.2px solid #e2e8f0;
+  border: 1.2px solid rgba(255,255,255,0.1);
   transition: transform .23s, box-shadow .23s, background .23s;
   text-align: center;
 }
 .aligned-feature-card:hover {
   transform: translateY(-7px) scale(1.035);
-  box-shadow: 0 12px 48px 0 rgba(52,99,215,0.15), 0 1.5px 8px #f3f8fc;
-  background: rgba(255,255,255,0.98);
+  box-shadow: 0 12px 48px 0 rgba(0,0,0,0.60), 0 1.5px 8px rgba(255,255,255,0.1);
+  background: rgba(30,30,30,0.98);
 }
 .aligned-icon {
   width: 64px;
@@ -663,12 +664,12 @@ div.feature-card.small-card {
 .aligned-feature-card h3 {
   font-size: 1.34em;
   font-weight: 700;
-  color: #193b6b;
+  color: #ffffff;
   margin: 0 0 11px 0;
   letter-spacing: -0.2px;
 }
 .aligned-feature-card p {
-  color: #475569;
+  color: #cccccc;
   font-size: 1em;
   font-weight: 400;
   line-height: 1.62;

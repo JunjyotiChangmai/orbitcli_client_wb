@@ -1,0 +1,17 @@
+/* Global Black Theme Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+html {
+  background-color: #000000;
+}
+

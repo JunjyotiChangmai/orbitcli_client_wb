@@ -9,11 +9,11 @@
   position: relative;
   overflow: hidden;
   background: 
-    radial-gradient(ellipse at top left, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at top right, rgba(37, 99, 235, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom left, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(96, 165, 250, 0.3) 0%, transparent 50%),
-    linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #2563eb 50%, #3b82f6 75%, #60a5fa 100%);
+    radial-gradient(ellipse at top left, rgba(30, 30, 30, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at top right, rgba(20, 20, 20, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(15, 15, 15, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(25, 25, 25, 0.5) 0%, transparent 50%),
+    linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #1a1a1a 50%, #0f0f0f 75%, #000000 100%);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
@@ -93,13 +93,14 @@
 }
 
 .auth-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(26, 26, 26, 0.95);
   backdrop-filter: blur(20px);
   border-radius: 24px;
   padding: 48px 40px;
   width: 100%;
   max-width: 440px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 2;
   animation: slideUp 0.5s ease-out;
@@ -136,7 +137,7 @@
 }
 
 .auth-subtitle {
-  color: #666;
+  color: #aaaaaa;
   font-size: 16px;
   font-weight: 400;
 }
@@ -145,9 +146,10 @@
   display: flex;
   gap: 8px;
   margin-bottom: 32px;
-  background: #f5f5f5;
+  background: #1a1a1a;
   padding: 4px;
   border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .auth-tab {
@@ -158,7 +160,7 @@
   border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
-  color: #666;
+  color: #aaaaaa;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Inter', sans-serif;
@@ -169,9 +171,9 @@
 }
 
 .auth-tab.active {
-  background: white;
-  color: #2563eb;
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+  background: #2a2a2a;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .auth-form {
@@ -189,32 +191,33 @@
 .form-group label {
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: #ffffff;
 }
 
 .form-group input {
   padding: 14px 16px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   font-size: 15px;
   font-family: 'Inter', sans-serif;
   transition: all 0.3s ease;
-  background: white;
+  background: #1a1a1a;
+  color: #ffffff;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
 }
 
 .form-group input:disabled {
-  background: #f5f5f5;
+  background: #0a0a0a;
   cursor: not-allowed;
 }
 
 .form-group input::placeholder {
-  color: #999;
+  color: #666;
 }
 
 .error-message {
@@ -259,7 +262,7 @@
 .auth-footer {
   margin-top: 24px;
   text-align: center;
-  color: #666;
+  color: #aaaaaa;
   font-size: 14px;
 }
 
