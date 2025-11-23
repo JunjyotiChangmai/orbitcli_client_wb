@@ -8,6 +8,7 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [name, setName] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -39,8 +40,18 @@ const Login = () => {
           navigate('/home');
         }
       } else {
-        if (!email || !password || !name) {
+        if (!email || !password || !name || !confirmPassword) {
           setError('Please fill in all fields');
+          setLoading(false);
+          return;
+        }
+        if (password.length < 6) {
+          setError('Password must be at least 6 characters long');
+          setLoading(false);
+          return;
+        }
+        if (password !== confirmPassword) {
+          setError('Passwords do not match');
           setLoading(false);
           return;
         }
@@ -85,6 +96,7 @@ const Login = () => {
             onClick={() => {
               setIsLogin(true);
               setError('');
+              setConfirmPassword('');
             }}
           >
             Login
@@ -94,6 +106,7 @@ const Login = () => {
             onClick={() => {
               setIsLogin(false);
               setError('');
+              setConfirmPassword('');
             }}
           >
             Sign Up
@@ -134,10 +147,31 @@ const Login = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
+              placeholder={isLogin ? "Enter your password" : "Create a password"}
               disabled={loading}
             />
           </div>
+
+          {!isLogin && (
+            <div className="form-group">
+              <label htmlFor="confirmPassword">Confirm Password</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Confirm your password"
+                disabled={loading}
+                className={confirmPassword && password && password !== confirmPassword ? 'password-mismatch' : confirmPassword && password === confirmPassword ? 'password-match' : ''}
+              />
+              {confirmPassword && password && password !== confirmPassword && (
+                <span className="password-hint">Passwords do not match</span>
+              )}
+              {confirmPassword && password === confirmPassword && (
+                <span className="password-hint password-match-hint">Passwords match</span>
+              )}
+            </div>
+          )}
 
           {error && <div className="error-message">{error}</div>}
 
@@ -159,6 +193,7 @@ const Login = () => {
                 onClick={() => {
                   setIsLogin(false);
                   setError('');
+                  setConfirmPassword('');
                 }}
               >
                 Sign up
@@ -172,6 +207,7 @@ const Login = () => {
                 onClick={() => {
                   setIsLogin(true);
                   setError('');
+                  setConfirmPassword('');
                 }}
               >
                 Login

@@ -126,7 +126,14 @@ const Signup = () => {
                   placeholder="Confirm your password"
                   disabled={loading}
                   required
+                  className={confirmPassword && password && password !== confirmPassword ? 'password-mismatch' : confirmPassword && password === confirmPassword ? 'password-match' : ''}
                 />
+                {confirmPassword && password && password !== confirmPassword && (
+                  <span className="password-hint">Passwords do not match</span>
+                )}
+                {confirmPassword && password === confirmPassword && (
+                  <span className="password-hint password-match-hint">Passwords match</span>
+                )}
               </div>
 
               {error && <div className="error-message">{error}</div>}

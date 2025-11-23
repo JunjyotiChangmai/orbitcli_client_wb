@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 .auth-container {
+  margin-top: 70px;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -218,6 +219,25 @@
 
 .form-group input::placeholder {
   color: #666;
+}
+
+.form-group input.password-mismatch {
+  border-color: #ef4444;
+}
+
+.form-group input.password-match {
+  border-color: #10b981;
+}
+
+.password-hint {
+  font-size: 12px;
+  margin-top: 4px;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.password-hint.password-match-hint {
+  color: #10b981;
 }
 
 .error-message {
