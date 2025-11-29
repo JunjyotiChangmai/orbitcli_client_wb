@@ -1,104 +1,35 @@
-import './App.css'
-import Home from './pages/home/Home'
-import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
-import Login from './pages/login/Login'
-import Signup from './pages/signup/Signup'
-import Dashboard from './pages/dashboard/Dashboard'
-import Models from './pages/models/Models'
-import ModelDetail from './pages/models/ModelDetail'
-import Billing from './pages/billing/Billing'
-import Checkout from './pages/checkout/Checkout'
-import Navbar from './components/Navbar'
-import { AuthProvider, useAuth } from './context/AuthContext'
-import ProtectedRoute from './components/ProtectedRoute'
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "@/lib/auth";
+import Landing from "./pages/Landing";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import NotFound from "./pages/NotFound";
 
-function AppRoutes() {
-  const { isAuthenticated, loading } = useAuth();
+const queryClient = new QueryClient();
 
-  if (loading) {
-    return (
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        height: '100vh',
-        fontSize: '18px',
-        backgroundColor: '#000000',
-        color: '#ffffff'
-      }}>
-        Loading...
-      </div>
-    );
-  }
-
-  return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Navigate to="/login" replace />}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/signup' element={<Signup/>}/>
-        <Route 
-          path='/home' 
-          element={
-            <ProtectedRoute>
-              <Home/>
-            </ProtectedRoute>
-          }
-        />
-        <Route 
-          path='/dashboard' 
-          element={
-            <ProtectedRoute>
-              <Dashboard/>
-            </ProtectedRoute>
-          }
-        />
-        <Route 
-          path='/models' 
-          element={
-            <ProtectedRoute>
-              <Models/>
-            </ProtectedRoute>
-          }
-        />
-        <Route 
-          path='/models/:modelId' 
-          element={
-            <ProtectedRoute>
-              <ModelDetail/>
-            </ProtectedRoute>
-          }
-        />
-        <Route 
-          path='/billing' 
-          element={
-            <ProtectedRoute>
-              <Billing/>
-            </ProtectedRoute>
-          }
-        />
-        <Route 
-          path='/checkout' 
-          element={
-            <ProtectedRoute>
-              <Checkout/>
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
-    </>
-  )
-}
-
-function App() {
-  return (
+const App = () => (
+  <QueryClientProvider client={queryClient}>
     <AuthProvider>
-      <Router>
-        <AppRoutes />
-      </Router>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
     </AuthProvider>
-  )
-}
+  </QueryClientProvider>
+);
 
-export default App
+export default App;

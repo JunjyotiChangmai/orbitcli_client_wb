@@ -1,88 +1,47 @@
-import React from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import './Navbar.css';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { useAuth } from '@/lib/auth';
+import { Terminal, LogOut, User } from 'lucide-react';
 
-const Navbar = () => {
-  const { isAuthenticated, user, logout } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleLogout = () => {
-    logout();
-    navigate('/login');
-  };
-
-  const getInitials = (name) => {
-    if (!name) return 'U';
-    return name
-      .split(' ')
-      .map(n => n[0])
-      .join('')
-      .toUpperCase()
-      .slice(0, 2);
-  };
+export function Navbar() {
+  const { user, logout } = useAuth();
 
   return (
-    <nav className="navbar">
-      <div className="navbar-backdrop"></div>
-      <div className="navbar-container">
-        <Link to="/home" className="navbar-logo">
-          <div className="logo-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2 group">
+          <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+            <Terminal className="w-5 h-5 text-primary" />
           </div>
-          <span className="logo-text">Orbit CLI</span>
+          <span className="text-xl font-bold gradient-text">OrbitCLI</span>
         </Link>
-        
-        <div className="navbar-menu">
-          {isAuthenticated ? (
+
+        <div className="flex items-center gap-4">
+          {user ? (
             <>
-              <Link 
-                to="/home" 
-                className={`navbar-link ${location.pathname === '/home' ? 'active' : ''}`}
-              >
-                Home
+              <Link to="/dashboard">
+                <Button variant="ghost" size="sm" className="gap-2">
+                  <User className="w-4 h-4" />
+                  Dashboard
+                </Button>
               </Link>
-              <Link 
-                to="/dashboard" 
-                className={`navbar-link ${location.pathname === '/dashboard' ? 'active' : ''}`}
-              >
-                Dashboard
-              </Link>
-              <Link 
-                to="/models" 
-                className={`navbar-link ${location.pathname === '/models' ? 'active' : ''}`}
-              >
-                Models
-              </Link>
-              <div className="navbar-user">
-                <div className="user-avatar">
-                  <span className="avatar-text">{getInitials(user?.name)}</span>
-                </div>
-                <span className="user-name">{user?.name || 'User'}</span>
-                <button onClick={handleLogout} className="navbar-logout">
-                  <span>Logout</span>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 14H3C2.44772 14 2 13.5523 2 13V3C2 2.44772 2.44772 2 3 2H6M10 11L14 8M14 8L10 5M14 8H6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-              </div>
+              <Button variant="outline" size="sm" onClick={logout} className="gap-2">
+                <LogOut className="w-4 h-4" />
+                Logout
+              </Button>
             </>
           ) : (
             <>
-              <Link to="/login" className="navbar-link">Login</Link>
-              <Link to="/signup" className="navbar-link navbar-link-primary">Sign Up</Link>
+              <Link to="/login">
+                <Button variant="ghost" size="sm">Login</Button>
+              </Link>
+              <Link to="/register">
+                <Button variant="default" size="sm">Get Started</Button>
+              </Link>
             </>
           )}
         </div>
       </div>
     </nav>
   );
-};
-
-export default Navbar;
-
+}
