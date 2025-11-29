@@ -2,12 +2,14 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Navbar } from '@/components/Navbar';
 import { Terminal, Key, Shield, Zap, ArrowRight, Command, Sparkles, Globe } from 'lucide-react';
+import TypeWriter from '../components/TypeWriter ';
+import InstallOrbitCLI from '../components/InstallOrbitCLI ';
 
 export default function Landing() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-glow" />
@@ -21,21 +23,23 @@ export default function Landing() {
               <span className="text-sm text-primary font-medium">Now with multi-LLM support</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            {/* <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Your AI Assistant,
               <br />
               <span className="gradient-text">One Command Away</span>
-            </h1>
+            </h1> */}
+
+               <TypeWriter/>
+
             
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-              OrbitCLI brings the power of GPT, Gemini, and Claude directly to your terminal. 
-              Streamline your workflow with intelligent code generation and assistance.
+              OrbitCLI brings the power of GPT, Gemini, and Claude directly to your terminal. Turn hours-long workflows into a single command. Your tools. Your workflow. Your codebase, evolving at thought speed.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/register">
                 <Button variant="hero" size="lg" className="gap-2 w-full sm:w-auto">
-                  Get Started Free
+                  Get Started
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
@@ -45,7 +49,9 @@ export default function Landing() {
                   View on GitHub
                 </Button>
               </a>
-            </div>
+            </div> */}
+
+            <InstallOrbitCLI/>
           </div>
 
           <div className="mt-16 animate-slide-up" style={{ animationDelay: '0.2s' }}>
@@ -136,7 +142,7 @@ export default function Landing() {
             </p>
             <Link to="/register">
               <Button variant="hero" size="lg" className="gap-2">
-                Create Free Account
+                Create Account
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
