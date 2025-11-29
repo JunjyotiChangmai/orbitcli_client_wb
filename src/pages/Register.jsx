@@ -64,7 +64,7 @@ export default function Register() {
                 <label className="text-sm font-medium text-foreground">Name</label>
                 <Input
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="Your name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
