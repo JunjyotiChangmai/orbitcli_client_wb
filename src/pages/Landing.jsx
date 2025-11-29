@@ -152,7 +152,7 @@ export default function Landing() {
 
       <footer className="py-8 px-4 border-t border-border">
         <div className="container mx-auto text-center text-sm text-muted-foreground">
-          <p>© 2024 OrbitCLI. Built for developers, by developers.</p>
+          <p>© 2025 OrbitCLI. Built for developers, by developers.</p>
         </div>
       </footer>
     </div>
